@@ -1,0 +1,108 @@
+:root {
+  --primary: #1976d2;
+  --secondary: #424242;
+  --accent: #ff4081;
+  --bg: #fff;
+  --panel-bg: #f7f8fa;
+  --border-color: #e0e0e0;
+  --text-main: #222;
+  --text-secondary: #757575;
+  --radius: 12px;
+}
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  height: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--panel-bg);
+  border-radius: 8px;
+}
+/* Utility classes */
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.18s;
+  outline: none;
+}
+.btn-accent {
+  background: var(--accent);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+input,
+textarea {
+  font-family: inherit;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 0.5em;
+  font-size: 1em;
+  background: #fff;
+  color: var(--text-main);
+  transition: border .15s;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid var(--primary);
+  outline: none;
+}
+/* Layout helpers */
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 1em; }
+.gap-05 { gap: 0.5em; }
+.mt-2 { margin-top: 2em; }
+.mt-1 { margin-top: 1em; }
+.mb-1 { margin-bottom: 1em; }
+.hidden { display: none !important; }
+@media (max-width: 900px) {
+  .sidebar {
+    min-width: 65vw !important;
+    width: 65vw !important;
+    max-width: 80vw !important;
+  }
+}
+@media (max-width: 600px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 50;
+    min-width: 80vw !important;
+    width: 80vw !important;
+    max-width: 96vw !important;
+    background: #fff;
+    box-shadow: 0 4px 28px 0 rgba(60,72,98,.14);
+  }
+}
